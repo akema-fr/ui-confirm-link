@@ -1,0 +1,50 @@
+/*
+- Style each label that is directly after the input
+- position: relative; will ensure that any position: absolute children will position themselves in relation to it
+*/
+.confirm-link {
+  display: inline-block;
+  input[type=checkbox] {
+    + label {
+      height: 1em;
+      width: 1em;
+      display: inline-block;
+      position: relative;
+
+      .confirm {
+        display: none;
+      }
+      /*
+      - Create a pseudo element :after when checked and provide a tick
+      - Center the content
+      */
+      &:before {
+        @extend .fa;
+        content: $fa-var-trash; /*content is required, though it can be empty - content: '';*/
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        color: $text-muted;
+      }
+    }
+    &:checked {
+      + label {
+        &:before {
+          /* content: $ fa-var-times; /content is required, though it can be empty - content: '';*/
+          @extend .text-danger;
+          top: 3px;
+        }
+        .confirm {
+          @extend .show;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,14 @@
+{% load i18n %}
+
+{% trans 'confirmer' as confirm %}
+
+<span class="as-checkbox confirm-link"
+      title="{{ action|default:confirm|capfirst }}" data-toggle="tooltip" data-placement="top">
+    <input type="checkbox" id="id-{{ item.id }}" class="sr-only"/>
+    <label for="id-{{ item.id }}">
+        <a href="{{ url }}" class="confirm">
+            {{ action|default:confirm }}
+        </a>
+    </label>
+</span>
+
