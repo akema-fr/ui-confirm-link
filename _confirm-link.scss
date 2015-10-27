@@ -1,6 +1,7 @@
 /*
 - Style each label that is directly after the input
-- position: relative; will ensure that any position: absolute children will position themselves in relation to it
+- position: relative; will ensure that any position: absolute children will position themselves
+in relation to it
 */
 .confirm-link {
   display: inline-block;
@@ -45,6 +46,5 @@
         }
       }
     }
-
   }
 }
